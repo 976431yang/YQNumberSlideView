@@ -5,7 +5,7 @@
 
 ### 效果：
 
-![image](https://github.com/976431yang/YQNumberSlideView/blob/master/YQNumberSlideView_DEMO/screenShot/2017-05-13-15_10_53.gif) </br>
+![image](https://github.com/976431yang/YQNumberSlideView/blob/master/YQNumberSlideView_DEMO/screenShot/2017-05-13-15_05_53.gif) </br>
 ![image](https://github.com/976431yang/YQNumberSlideView/blob/master/YQNumberSlideView_DEMO/screenShot/2017-05-13-15_10_45.gif)
 
 ### 使用方法：
