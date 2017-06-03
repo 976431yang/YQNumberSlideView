@@ -30,9 +30,9 @@
     //(可选)加个背景色，方便自己看范围
     slideView.backgroundColor = [UIColor colorWithWhite:0.931 alpha:1.000];
 ```
-######完事了，已经可以显示了。
+###### 完事了，已经可以显示了。
 
-#####监控选择结果
+##### 监控选择结果
 ```objective-c
     //设代理
     slideView.delegate = self;
@@ -44,14 +44,14 @@
 }
 ```
 
-#####自定义显示内容（想上面的图片中显示的“小红”“小明”等）
+##### 自定义显示内容（想上面的图片中显示的“小红”“小明”等）
 ```objective-c
 	[slideView setLableCount:8];
 	[slideView setShowArray:@[@"小明",@"小红",@"小方",@"小亮",@"小华",@"小坏",@"小丑",@"小帅",]];
 
     //注意LableCount要和ShowArray的个数保持一致
 ```
-#####更多自定义显示样式
+##### 更多自定义显示样式
 ```objective-c
 	//每个显示的Lable的宽度,默认33,(宽度不够会导致字体变小)
 	slideView.lableWidth;
