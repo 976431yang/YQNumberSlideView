@@ -78,4 +78,12 @@
 	[slideView show];
 ```
     
+##### 焦点变色模式
+```objective-c
+	[slideView DiffrentColorModeWithMainColorR:0.154 G:1.000 B:0.063 
+                                     SecColorR:0.281 G:0.772 B:0.970];
+
+	//!!!!!!调用完  要调一下 刷新显示，才能生效!!!!!!
+	[slideView show];
+```
 

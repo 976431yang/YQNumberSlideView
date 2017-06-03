@@ -23,6 +23,13 @@
 @property int allcount;
 @property int lastCount;
 
+@property BOOL  colorMode;
+@property float colorModeR;
+@property float colorModeG;
+@property float colorModeB;
+@property float colorModeSR;
+@property float colorModeSG;
+@property float colorModeSB;
 
 @end
 
@@ -106,6 +113,17 @@
             
             lab.textAlignment = NSTextAlignmentCenter;
             lab.textColor     = self.LabColor;
+            if(self.colorMode && i==0){
+                lab.textColor = [UIColor colorWithRed:self.colorModeR
+                                                green:self.colorModeG
+                                                 blue:self.colorModeB
+                                                alpha:1];
+            }else if(self.colorMode){
+                lab.textColor = [UIColor colorWithRed:self.colorModeSR
+                                                green:self.colorModeSG
+                                                 blue:self.colorModeSB
+                                                alpha:1];
+            }
             
             [self.SCRV addSubview:lab];
             [self.SlideLabArr addObject:lab];
@@ -169,6 +187,15 @@
                                           (self.maxHeight-self.minHeight)*offsetRait);
             showingLab.font = [UIFont systemFontOfSize:kViewHeight(showingLab)];
             showingLab.alpha = 1-(1-self.SecLevelAlpha)*(1-offsetRait);
+            
+            if(self.colorMode){
+                float colorRait = (showingLab.alpha-self.SecLevelAlpha)/(1-self.SecLevelAlpha);
+                float R = self.colorModeSR + (self.colorModeR-self.colorModeSR) * colorRait;
+                float G = self.colorModeSG + (self.colorModeG-self.colorModeSG) * colorRait;
+                float B = self.colorModeSB + (self.colorModeB-self.colorModeSB) * colorRait;
+                UIColor *color = [UIColor colorWithRed:R green:G blue:B alpha:1];
+                showingLab.textColor = color;
+            }
         }
         
         if(count < self.SlideLabArr.count-1){
@@ -181,6 +208,15 @@
                                            (self.maxHeight-self.minHeight)*(1-offsetRait));
                 nextLab.font = [UIFont systemFontOfSize:kViewHeight(nextLab)];
                 nextLab.alpha = self.SecLevelAlpha + (1-self.SecLevelAlpha)*(1-offsetRait);
+                
+                if(self.colorMode){
+                    float colorRait = (nextLab.alpha-self.SecLevelAlpha)/(1-self.SecLevelAlpha);
+                    float R = self.colorModeSR + (self.colorModeR-self.colorModeSR) * colorRait;
+                    float G = self.colorModeSG + (self.colorModeG-self.colorModeSG) * colorRait;
+                    float B = self.colorModeSB + (self.colorModeB-self.colorModeSB) * colorRait;
+                    UIColor *color = [UIColor colorWithRed:R green:G blue:B alpha:1];
+                    nextLab.textColor = color;
+                }
             }
         }
         if(count > 0){
@@ -264,4 +300,16 @@
     }
 }
 
+-(void)DiffrentColorModeWithMainColorR:(float)mr G:(float)mg B:(float)mb
+                             SecColorR:(float)sr G:(float)sg B:(float)sb
+{
+    self.colorMode = YES;
+    self.colorModeR = mr;
+    self.colorModeG = mg;
+    self.colorModeB = mb;
+    self.colorModeSR = sr;
+    self.colorModeSG = sg;
+    self.colorModeSB = sb;
+    
+}
 @end

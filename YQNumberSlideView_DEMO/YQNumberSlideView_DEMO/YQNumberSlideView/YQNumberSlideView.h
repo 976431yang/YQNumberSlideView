@@ -91,6 +91,18 @@
  */
 @property CGFloat ThirdLevelAlpha;
 
+/**
+ *  焦点变色模式（beta）
+ *
+ *  @param mr 焦点红 0~1
+ *  @param mg 焦点绿 0~1
+ *  @param mb 焦点蓝 0~1
+ *  @param sr 非焦点红 0~1
+ *  @param sg 非焦点绿 0~1
+ *  @param sb 非焦点蓝 0~1
+ */
+-(void)DiffrentColorModeWithMainColorR:(float)mr G:(float)mg B:(float)mb
+                             SecColorR:(float)sr G:(float)sg B:(float)sb;
 
 
 @end

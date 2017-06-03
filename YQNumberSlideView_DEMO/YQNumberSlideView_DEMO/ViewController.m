@@ -30,6 +30,7 @@
                                                                         50)];
     //设置一个背景色，以便查看范围
     self.slideView.backgroundColor = [UIColor colorWithWhite:0.931 alpha:1.000];
+    
     [self.slideView setLableCount:20];
     //监控代理
     self.slideView.delegate = self;
@@ -52,6 +53,17 @@
      //设置一下宽度
      self.slideView.lableWidth = 40;
      //显示
+     [self.slideView show];
+     */
+    
+    /*
+     //彩色模式
+     [self.slideView DiffrentColorModeWithMainColorR:0.154 G:1.000 B:0.063
+                                           SecColorR:0.281 G:0.772 B:0.970];
+     
+     [self.slideView setLableCount:20];
+     //监控代理
+     self.slideView.delegate = self;
      [self.slideView show];
      */
 }
