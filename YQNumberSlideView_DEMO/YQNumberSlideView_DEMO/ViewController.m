@@ -75,9 +75,14 @@
     [self.slideView next];
 }
 
--(void)YQSlideViewDidChangeIndex:(int)count
+- (void)YQSlideViewDidChangeIndex:(int)count
 {
     self.lab.text = [NSString stringWithFormat:@"当前页：%d",count+1];
+}
+
+- (void)YQSlideViewDidTouchIndex:(int)count
+{
+    [self.slideView scrollTo:count];
 }
 
 - (void)didReceiveMemoryWarning {

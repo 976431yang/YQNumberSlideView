@@ -11,43 +11,50 @@
 
 @protocol YQNumberSlideViewDelegate <NSObject>
 
--(void)YQSlideViewDidChangeIndex:(int)count;
+- (void)YQSlideViewDidChangeIndex:(int)count;
+
+- (void)YQSlideViewDidTouchIndex:(int)count;
 
 @end
 
 
-@interface YQNumberSlideView : UIView
+@interface YQNumberSlideView :UIView
 
 #pragma mark -----------------------Function
 
 /**
  *  刷新显示-如果有自定义样式，需要调用此方法
  */
--(void)show;
+- (void)show;
 
 /**
  *  设置数量
  *
  *  @param count 数量
  */
--(void)setLableCount:(int)count;
+- (void)setLableCount:(int)count;
 
 /**
  *  设置显示的内容数组，不设置的话显示数字
  *
  *  @param arr 内容
  */
--(void)setShowArray:(NSArray *)arr;
+- (void)setShowArray:(NSArray *)arr;
 
 /**
  *  手动跳转到下一个
  */
--(void)next;
+- (void)next;
 
 /**
  *  手动跳转到前一个
  */
--(void)pre;
+- (void)pre;
+
+/**
+ *  手动跳转
+ */
+- (void)scrollTo:(int)index;
 
 
 #pragma mark -----------------------Property
@@ -101,7 +108,7 @@
  *  @param sg 非焦点绿 0~1
  *  @param sb 非焦点蓝 0~1
  */
--(void)DiffrentColorModeWithMainColorR:(float)mr G:(float)mg B:(float)mb
+- (void)DiffrentColorModeWithMainColorR:(float)mr G:(float)mg B:(float)mb
                              SecColorR:(float)sr G:(float)sg B:(float)sb;
 
 
